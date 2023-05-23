@@ -394,27 +394,39 @@ let sampleArray = [0, 1, 2, 3, 4, 7, 5, 6, 8, 9]
 
 //CODE HERE
 
+// function isAscending (arr){
+//   let ascendCalc = []
+//   let ascendCalcTotal = 0
+//   for (let i = 0; i < sampleArray.length - 1; i++){
+//     if (sampleArray[i] < sampleArray[i + 1]){
+//       ascendCalc.push(1)
+//     } else {
+//       ascendCalc.push(0)
+//     }
+//   }
+//   // console.log(ascendCalc)
+//   for(let i = 0; i < sampleArray.length - 1; i++){
+//     ascendCalcTotal += ascendCalc[i]
+//   }
+//   // console.log(ascendCalcTotal)
+//   // console.log(sampleArray.length - 1)
+//   if (ascendCalcTotal < sampleArray.length - 1){
+//     return false
+//   } else {
+//     return true
+//   }
+// }
+
 function isAscending (arr){
-  let ascendCalc = []
-  let ascendCalcTotal = 0
-  for (let i = 0; i < sampleArray.length - 1; i++){
-    if (sampleArray[i] < sampleArray[i + 1]){
-      ascendCalc.push(1)
-    } else {
-      ascendCalc.push(0)
-    }
+
+  for (let i = 0; i < arr.length; i++){
+    for(x = 1; x < arr.length; x++){
+      if (arr[i] >= arr[i + x]){
+      return false
+      }
+    } 
   }
-  // console.log(ascendCalc)
-  for(let i = 0; i < sampleArray.length - 1; i++){
-    ascendCalcTotal += ascendCalc[i]
-  }
-  // console.log(ascendCalcTotal)
-  // console.log(sampleArray.length - 1)
-  if (ascendCalcTotal < sampleArray.length - 1){
-    return false
-  } else {
     return true
-  }
 }
 
 let arrayIsAscending = isAscending(sampleArray)
